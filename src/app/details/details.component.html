@@ -1,0 +1,108 @@
+
+
+  <div [ngSwitch]="type">
+    <div  class="container" *ngSwitchCase="'game'" >
+<div class="row">
+  <div class="col-sm">
+      <img class="card-img-top" src='{{datos.image.medium_url}}'>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm 6">
+      <p>Titulo:</p>
+  </div>
+  <div class="col-sm 6">
+      <p>{{datos.name}}</p>
+  </div>
+  </div>
+  <div class="row">
+      <div class="col-sm 6">
+          <p>Resumen:</p>
+      </div>
+      <div class="col-sm 6">
+          <p>{{datos.deck}}</p>
+      </div>
+      </div>
+      <div class="row">
+          <div class="col-sm 6">
+              <p>Personajes Principales:</p>
+          </div>
+          <div  *ngFor="let personaje of datos.characters"  class="col-sm 6">
+              {{personaje.name}}
+          </div>
+          </div>
+          <div class="row">
+              <div class="col-sm 6">
+                  <p>Genero:</p>
+              </div>
+              <div  *ngFor="let genero of datos.genres"  class="col-sm 6">
+                  {{genero.name}}
+              </div>
+              </div>
+    
+
+    </div>
+    <div class="container" *ngSwitchCase="'character'"  >
+        <div class="row">
+            <div class="col-sm 6">
+                <img class="card-img-top" src='{{datos.image.medium_url}}'>
+            </div>
+            <div class="col-sm 6">
+              <h3>Nombre:{{datos.name}}</h3>
+              
+            </div>
+          </div>
+            <div class="row">
+                <div class="col-sm 6">
+                    <p>Historia:</p>
+                </div>
+                <div class="col-sm 6">
+                    <p>{{datos.deck}}</p>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm 6">
+                        <p>Cumpleaños</p>
+                    </div>
+                    <div    class="col-sm 6">
+                        {{datos.birthday}}
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm 6">
+                            <p>Enemigos:</p>
+                        </div>
+                        <div  *ngFor="let enemigos of datos.enemies"  class="col-sm 6">
+                            {{enemigos.name}}
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm 6">
+                                <p>Amigos:</p>
+                            </div>
+                            <div  *ngFor="let amigos of datos.friends"  class="col-sm 6">
+                                {{amigos.name}}
+                            </div>
+                            </div>
+    </div>
+    <div *ngSwitchCase="'accessory'">
+        <div class="row">
+            <div class="col-sm 6">
+                <img class="card-img-top" src='{{datos.image.medium_url}}'>
+            </div>
+            <div class="col-sm 6">
+              <h3>Nombre:{{datos.name}}</h3>
+              
+            </div>
+          </div>
+            <div class="row">
+                <div class="col-sm 6">
+                    <p>Descripcion:</p>
+                </div>
+                <div class="col-sm 6">
+                    <p>{{datos.deck}}</p>
+                </div>
+                </div>
+            
+    </div>  
+    </div>

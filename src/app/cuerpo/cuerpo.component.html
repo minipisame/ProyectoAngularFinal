@@ -1,0 +1,29 @@
+<div *ngIf="datos">
+
+<div class="row"
+infinite-scroll
+[infiniteScrollDistance]="scrollDistance"
+[infiniteScrollThrottle]="throttle"
+(scrolled)="onScrollDown()">
+  <div *ngFor="let game of datos" class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+    <div class="card h-100">
+
+       <div [ngSwitch]="ruta">
+      <a *ngSwitchCase="'/games'"  routerLink="/game/{{game.guid}}" routerLinkActive="active"><img class="card-img-top" src='{{game.image.medium_url}}'></a>
+      <a *ngSwitchCase="'/characters'"  routerLink="/character/{{game.guid}}" routerLinkActive="active"><img class="card-img-top" src='{{game.image.medium_url}}'></a>
+      <a *ngSwitchCase="'/accessories'"  routerLink="/accessory/{{game.guid}}" routerLinkActive="active"><img class="card-img-top" src='{{game.image.medium_url}}'></a>
+       </div>
+      <div class="card-body">
+        <h4 class="card-title">
+            <div [ngSwitch]="ruta">
+                <a *ngSwitchCase="'/games'"  routerLink="/game/{{game.guid}}" routerLinkActive="active">{{game.name}}</a>
+                <a *ngSwitchCase="'/characters'"  routerLink="/character/{{game.guid}}" routerLinkActive="active">{{game.name}}</a>
+                <a *ngSwitchCase="'/accessories'"  routerLink="/accessory/{{game.guid}}" routerLinkActive="active">{{game.name}}</a>
+                 </div>
+        </h4>
+        <p class="card-text">{{game.deck}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
