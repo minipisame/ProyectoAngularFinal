@@ -8,6 +8,11 @@
     "target":"https://www.giantbomb.com/api",
     "secure":false,
     "changeOrigin": true
+},
+"/*":{
+    "target":"https://www.giantbomb.com/api",
+    "secure":false,
+    "changeOrigin": true
 }
 
 }
